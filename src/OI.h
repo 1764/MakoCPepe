@@ -1,0 +1,40 @@
+#ifndef OI_H
+#define OI_H
+
+#include "WPILib.h"
+
+class OI
+{
+private:
+	Joystick *pilot;
+public:
+	OI();
+	double GetPilotAxis(int);
+	bool GetPilotButton(int);
+
+	const int LOGITECH_EXTREME3D_AXIS_X = 0;
+	const int LOGITECH_EXTREME3D_AXIS_Y = 1;
+	const int LOGITECH_EXTREME3D_AXIS_Z = 2;
+	const int LOGITECH_EXTREME3D_AXIS_SLIDER = 3;
+	const int LOGITECH_EXTREME3D_BUTTON_TRIGGER = 1;
+	const int LOGITECH_EXTREME3D_BUTTON_THUMB = 2;
+
+	const int LOGITECH_F510_AXIS_LEFT_STICK_X = 0;
+	const int LOGITECH_F510_AXIS_LEFT_STICK_Y = 1;
+	const int LOGITECH_F510_AXIS_RIGHT_STICK_X = 4;
+	const int LOGITECH_F510_AXIS_RIGHT_STICK_Y = 5;
+	const int LOGITECH_F510_AXIS_LEFT_TRIGGER = 2;
+	const int LOGITECH_F510_AXIS_RIGHT_TRIGGER = 3;
+	const int LOGITECH_F510_BUTTON_A = 1;
+	const int LOGITECH_F510_BUTTON_B = 2;
+	const int LOGITECH_F510_BUTTON_X = 3;
+	const int LOGITECH_F510_BUTTON_Y = 4;
+	const int LOGITECH_F510_BUTTON_LEFT_BUMPER = 5;
+	const int LOGITECH_F510_BUTTON_RIGHT_BUMPER = 6;
+	const int LOGITECH_F510_BUTTON_BACK = 7;
+	const int LOGITECH_F510_BUTTON_SELECT = 8;
+	const int LOGITECH_F510_BUTTON_LEFT_CLICK = 9;
+	const int LOGITECH_F510_BUTTON_RIGHT_CLICK = 10;
+};
+
+#endif
