@@ -1,18 +1,24 @@
+#include <Commands/DriveWithJoystick.h>
 #include "DriveTrain.h"
 #include "../RobotMap.h"
-#include "Commands/DriveWithExponentialJoystick.h"
 
 DriveTrain::DriveTrain() :
 		Subsystem("ExampleSubsystem")
 {
-	left_motor = new Talon(left_motor_port);
-	right_motor = new Talon(right_motor_port);
+	left_gearbox_front_motor = new Talon(front_left_motor_port);
+	right_gearbox_front_motor = new Talon(front_right_motor_port);
+    right_gearbox_back_motor = new Talon(back_left_motor_port);
+  	left_gearbox_back_motor = new Talon(back_right_motor_port);
 }
 
-void DriveTrain::Set(double y, double z)
-{
-	left_motor->Set(-y+z);
-	right_motor->Set(y+z);
+void DriveTrain::SetRight(double val) {
+	right_gearbox_front_motor->Set(val);
+	right_gearbox_back_motor->Set(val);
+}
+
+void DriveTrain::SetLeft(double val) {
+	left_gearbox_back_motor->Set(val);
+	left_gearbox_front_motor->Set(val);
 }
 
 void DriveTrain::InitDefaultCommand()

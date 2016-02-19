@@ -6,11 +6,16 @@
 class OI
 {
 private:
-	Joystick *pilot;
+	Joystick *pilot, *copilot;
+	Button *arm_in_button, *arm_out_button, *arm_up_button, *arm_down_button;
+	Button *shoot_short_button, *shoot_medium_button, *shoot_far_button;
+	Button *spindle_intake_button;
 public:
 	OI();
 	double GetPilotAxis(int);
 	bool GetPilotButton(int);
+	bool GetCopilotButton(int);
+	double GetCopilotAxis(int);
 
 	const int LOGITECH_EXTREME3D_AXIS_X = 0;
 	const int LOGITECH_EXTREME3D_AXIS_Y = 1;

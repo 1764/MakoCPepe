@@ -7,10 +7,11 @@
 class DriveTrain: public Subsystem
 {
 private:
-	Talon *left_motor, *right_motor;
+	Talon *left_gearbox_front_motor, *right_gearbox_front_motor , *right_gearbox_back_motor, *left_gearbox_back_motor;
 public:
 	DriveTrain();
-	void Set(double, double);
+	void SetLeft(double);
+	void SetRight(double);
 	void InitDefaultCommand();
 };
 
