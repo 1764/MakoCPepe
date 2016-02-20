@@ -2,8 +2,6 @@
 
 ArmMove::ArmMove(ARM_DIR dir)
 {
-	// Use Requires() here to declare subsystem dependencies
-	// eg. Requires(chassis);
 	Requires(piston_arm);
 	this->dir = dir;
 }

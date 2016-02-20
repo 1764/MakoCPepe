@@ -16,8 +16,8 @@ void DriveWithExponentialJoystick::Execute()
 	//double a = oi->GetPilotAxis(oi->LOGITECH_EXTREME3D_AXIS_SLIDER);
 	//y = Adjust(y, a);
 	//z = Adjust(z, a);
-	drive_train->SetLeft(y+z);
-	drive_train->SetRight(-y+z);
+	drive_train->SetLeft(-y+z);
+	drive_train->SetRight(y+z);
 }
 
 bool DriveWithExponentialJoystick::IsFinished()

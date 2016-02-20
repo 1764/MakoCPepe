@@ -14,10 +14,13 @@ void ManipulateArm::Initialize()
 // Called repeatedly when this Command is scheduled to run
 void ManipulateArm::Execute()
 {
+	// Move the piston Arm forward
 	if(oi->GetPilotButton(oi->LOGITECH_F510_BUTTON_LEFT_BUMPER))
 		piston_arm->SetHorizontal(piston_arm->FORWARD);
+	// Move the piston arm back
 	else if(oi->GetPilotButton(oi->LOGITECH_F510_BUTTON_X))
 		piston_arm->SetHorizontal(piston_arm->BACKWARD);
+	// Move the piston arm up
 	if(oi->GetPilotButton(oi->LOGITECH_F510_AXIS_LEFT_TRIGGER))
 		piston_arm->SetVertical(piston_arm->UP);
 	else

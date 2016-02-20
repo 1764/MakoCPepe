@@ -9,7 +9,8 @@ Spindle::Spindle() :
 }
 
 void Spindle::SetSpeed(double speed) {
-	spindle.SetSpeed(speed);
+	spindle->SetSpeed(speed);
+
 }
 
 void Spindle::InitDefaultCommand()

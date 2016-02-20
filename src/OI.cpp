@@ -13,6 +13,12 @@ OI::OI()
 			*shoot_medium_button = new JoystickButton(copilot, 10),
 			*shoot_far_button = new JoystickButton(copilot, 9);
 	Button *spindle_intake_button = new JoystickButton(copilot, 8);
+
+//	shoot_short_button->WhileHeld(new Shoot(0.3, 0.3));
+//	shoot_medium_button->WhileHeld(new Shoot(0.6, 0.6));
+//	shoot_far_button->WhileHeld(new Shoot(1,1));
+//
+//	spindle_intake_button->WhileHeld(new IntakeWithSpindle(0.5));
 }
 
 double OI::GetPilotAxis(int axis)
