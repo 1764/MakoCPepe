@@ -7,10 +7,9 @@
 class Shoot: public CommandBase
 {
 private:
-	double spindle_speed;
 	double flywheel_speed;
 public:
-	Shoot(double,double);
+	Shoot(double);
 	void Initialize();
 	void Execute();
 	bool IsFinished();

@@ -3,8 +3,9 @@
 
 OI *CommandBase::oi = NULL;
 DriveTrain *CommandBase::drive_train = NULL;
-PistonArm *CommandBase::piston_arm = NULL;
-Flywheel *CommandBase::flywheel = NULL;
+Piston *CommandBase::piston = NULL;
+Lifter *CommandBase::lifter = NULL;
+FlywheelPID *CommandBase::flywheel = NULL;
 Spindle *CommandBase::spindle = NULL;
 
 CommandBase::CommandBase(const std::string &name) :
@@ -20,9 +21,10 @@ CommandBase::CommandBase() :
 
 void CommandBase::init()
 {
-	oi = new OI();
 	drive_train = new DriveTrain();
-	//piston_arm = new PistonArm();
-	flywheel = new Flywheel();
+	piston = new Piston();
+	lifter = new Lifter();
+	flywheel = new FlywheelPID();
 	spindle = new Spindle();
+	oi = new OI();
 }

@@ -3,9 +3,13 @@
 #include <Talon.h>
 
 Spindle::Spindle() :
-		Subsystem("ExampleSubsystem")
+		Subsystem("Spindle")
 {
+#ifdef SPINDLE_TALON
 	spindle = new Talon(spindle_port);
+#else
+	spindle = new Victor(spindle_port);
+#endif
 }
 
 void Spindle::SetSpeed(double speed) {

@@ -3,10 +3,13 @@
 #include "../CommandBase.h"
 #include "WPILib.h"
 
-class DriveWithExponentialJoystick: public CommandBase
+class DriveWithJoystick: public CommandBase
 {
+private:
+	int dir = 1;
+	bool last = false;
 public:
-	DriveWithExponentialJoystick();
+	DriveWithJoystick();
 	void Initialize();
 	void Execute();
 	bool IsFinished();

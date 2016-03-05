@@ -18,6 +18,7 @@ void IntakeWithSpindle::Initialize()
 void IntakeWithSpindle::Execute()
 {
 	spindle->SetSpeed(speed);
+	//spindle->SetSetpoint(speed);
 }
 
 // Make this return true when this Command no longer needs to run execute()
@@ -30,6 +31,7 @@ bool IntakeWithSpindle::IsFinished()
 void IntakeWithSpindle::End()
 {
 	spindle->SetSpeed(0);
+	//spindle->SetSetpoint(0);
 }
 
 // Called when another command which requires one or more of the same
@@ -37,4 +39,5 @@ void IntakeWithSpindle::End()
 void IntakeWithSpindle::Interrupted()
 {
 	spindle->SetSpeed(0);
+	//spindle->SetSetpoint(0);
 }

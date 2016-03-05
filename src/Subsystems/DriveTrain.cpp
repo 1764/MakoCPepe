@@ -3,13 +3,24 @@
 #include "../RobotMap.h"
 
 DriveTrain::DriveTrain() :
-		Subsystem("ExampleSubsystem")
+		Subsystem("DriveTrain")
 {
-	left_gearbox_front_motor = new Talon(front_left_motor_port);
-  	left_gearbox_back_motor = new Talon(back_left_motor_port);
+#ifdef CHASSIS_TALON
+	left_gearbox_front_motor = new Talon(left_gearbox_front_motor_port);
+  	left_gearbox_back_motor = new Talon(left_gearbox_back_motor_port);
 
-  	right_gearbox_front_motor = new Talon(front_right_motor_port);
-  	right_gearbox_back_motor = new Talon(back_right_motor_port);
+  	right_gearbox_front_motor = new Talon(right_gearbox_front_motor_port);
+  	right_gearbox_back_motor = new Talon(right_gearbox_back_motor_port);
+#endif
+
+#ifdef CHASSIS_VICTOR
+  	left_gearbox_front_motor = new Victor(left_gearbox_front_motor_port);
+	left_gearbox_back_motor = new Victor(left_gearbox_back_motor_port);
+
+	right_gearbox_front_motor = new Victor(right_gearbox_front_motor_port);
+	right_gearbox_back_motor = new Victor(right_gearbox_back_motor_port);
+#endif
+
 }
 
 void DriveTrain::SetRight(double val) {
@@ -24,7 +35,7 @@ void DriveTrain::SetLeft(double val) {
 
 void DriveTrain::InitDefaultCommand()
 {
-	SetDefaultCommand(new DriveWithExponentialJoystick());
+	SetDefaultCommand(new DriveWithJoystick());
 }
 
 // Put methods for controlling this subsystem

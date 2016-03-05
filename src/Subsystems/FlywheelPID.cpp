@@ -11,7 +11,12 @@ FlywheelPID::FlywheelPID() :
 	//                  to
 	// Enable() - Enables the PID controller.
 	flywheel_encoder = new Encoder(flywheel_encoder_port_one, flywheel_encoder_port_two);
+
+#ifdef FLYWHEEL_TALON
 	flywheel = new Talon(flywheel_port);
+#else
+	flywheel = new Victor(flywheel_port);
+#endif
 }
 
 double FlywheelPID::ReturnPIDInput()

@@ -1,12 +1,15 @@
-#include <Commands/Shooter/ShootWithJoystick.h>
 #include <RobotMap.h>
 #include <Subsystems/Flywheel.h>
-#include <Talon.h>
 
 Flywheel::Flywheel() :
 		Subsystem("ExampleSubsystem")
 {
-	flywheel = new Talon(shooter_port);
+#ifdef FLYWHEEL_TALON
+	flywheel = new Talon(flywheel_port);
+#endif
+#ifdef FLYWHEEL_VICTOR
+	flywheel = new Victor(flywheel_port);
+#endif
 }
 
 void Flywheel::SetSpeed(double speed)
