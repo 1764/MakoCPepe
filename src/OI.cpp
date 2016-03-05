@@ -1,5 +1,4 @@
 #include "OI.h"
-#include "./Commands/Shooter/PIDShoot.h"
 #include "./Commands/Shooter/Shoot.h"
 #include "./Commands/Shooter/IntakeWithSpindle.h"
 #include "./Commands/PistonArm/ArmIn.h"
@@ -22,7 +21,6 @@ OI::OI()
 	arm_out_button = new AnalogButton(0.5, 1, copilot);
 
 	shoot_medium_button->WhileHeld(new Shoot(-1));
-	shoot_far_button->WhileHeld(new PIDShoot(5000));
 
 	spindle_intake_button->WhileHeld(new IntakeWithSpindle(1));
 	spindle_out_button->WhileHeld(new IntakeWithSpindle(-1));

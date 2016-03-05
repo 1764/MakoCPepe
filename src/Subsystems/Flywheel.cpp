@@ -6,8 +6,7 @@ Flywheel::Flywheel() :
 {
 #ifdef FLYWHEEL_TALON
 	flywheel = new Talon(flywheel_port);
-#endif
-#ifdef FLYWHEEL_VICTOR
+#else
 	flywheel = new Victor(flywheel_port);
 #endif
 }
