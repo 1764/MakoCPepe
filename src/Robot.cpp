@@ -50,7 +50,7 @@ private:
 			autonomousCommand.reset(new ExampleCommand());
 		} */
 
-		autonomousCommand.reset((Command *)chooser->GetSelected());
+		//autonomousCommand.reset((Command *)chooser->GetSelected());
 
 		if (autonomousCommand != NULL)
 			autonomousCommand->Start();

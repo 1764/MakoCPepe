@@ -16,10 +16,10 @@ OI::OI()
 	shoot_far_button = new JoystickButton(copilot, LOGITECH_F510_BUTTON_A);
 	spindle_intake_button = new JoystickButton(copilot, LOGITECH_F510_BUTTON_LEFT_BUMPER);
 	spindle_out_button = new JoystickButton(copilot, LOGITECH_F510_BUTTON_RIGHT_BUMPER);
-	arm_up_button = new JoystickButton(copilot, LOGITECH_F510_BUTTON_Y);
-	arm_down_button = new JoystickButton(copilot, LOGITECH_F510_BUTTON_X);
-	arm_in_button = new AnalogButton(-0.5, 1, copilot);
-	arm_out_button = new AnalogButton(0.5, 1, copilot);
+	arm_in_button = new JoystickButton(copilot, LOGITECH_F510_BUTTON_Y);
+	arm_out_button = new JoystickButton(copilot, LOGITECH_F510_BUTTON_X);
+	arm_up_button = new AnalogButton(-0.5, 1, copilot);
+	arm_down_button = new AnalogButton(0.5, 1, copilot);
 
 	shoot_medium_button->WhileHeld(new Shoot(-1));
 	shoot_far_button->WhileHeld(new PIDShoot(5000));
