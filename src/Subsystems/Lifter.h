@@ -9,11 +9,7 @@
 class Lifter: public Subsystem
 {
 private:
-#ifdef LIFTER_TALON
-	Talon* lifter;
-#else
 	Victor* lifter;
-#endif
 public:
 	Lifter();
 	void InitDefaultCommand();

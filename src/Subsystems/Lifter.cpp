@@ -4,11 +4,7 @@
 Lifter::Lifter() :
 		Subsystem("Lifter")
 {
-#ifdef LIFTER_TALON
-	lifter = new Talon(vertical_arm_port);
-#else
 	lifter = new Victor(vertical_arm_port);
-#endif
 }
 
 void Lifter::InitDefaultCommand()

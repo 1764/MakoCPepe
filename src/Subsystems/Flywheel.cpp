@@ -4,11 +4,7 @@
 Flywheel::Flywheel() :
 		Subsystem("ExampleSubsystem")
 {
-#ifdef FLYWHEEL_TALON
-	flywheel = new Talon(flywheel_port);
-#else
 	flywheel = new Victor(flywheel_port);
-#endif
 }
 
 void Flywheel::SetSpeed(double speed)

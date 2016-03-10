@@ -5,20 +5,11 @@
 DriveTrain::DriveTrain() :
 		Subsystem("DriveTrain")
 {
-#ifdef CHASSIS_TALON
-	left_gearbox_front_motor = new Talon(left_gearbox_front_motor_port);
-  	left_gearbox_back_motor = new Talon(left_gearbox_back_motor_port);
-
-  	right_gearbox_front_motor = new Talon(right_gearbox_front_motor_port);
-  	right_gearbox_back_motor = new Talon(right_gearbox_back_motor_port);
-#else
   	left_gearbox_front_motor = new Victor(left_gearbox_front_motor_port);
 	left_gearbox_back_motor = new Victor(left_gearbox_back_motor_port);
 
 	right_gearbox_front_motor = new Victor(right_gearbox_front_motor_port);
 	right_gearbox_back_motor = new Victor(right_gearbox_back_motor_port);
-#endif
-
 }
 
 void DriveTrain::SetRight(double val) {
