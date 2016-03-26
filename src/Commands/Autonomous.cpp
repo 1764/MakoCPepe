@@ -1,4 +1,5 @@
 #include "Autonomous.h"
+#include "DriveForTime.h"
 
 Autonomous::Autonomous()
 {
@@ -20,6 +21,6 @@ Autonomous::Autonomous()
 	// arm.
 
 	//Something To Line Up With Tower
-	AddSequential(new PutAtDistance());
-	AddSequential(new PIDShoot(5000));
+
+	AddSequential(new DriveForTime(5, 0.35));
 }
