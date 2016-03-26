@@ -7,6 +7,7 @@ Piston *CommandBase::piston = NULL;
 Lifter *CommandBase::lifter = NULL;
 FlywheelPID *CommandBase::flywheel = NULL;
 Spindle *CommandBase::spindle = NULL;
+BallSensor *CommandBase::ballSensor = NULL;
 
 CommandBase::CommandBase(const std::string &name) :
 		Command(name)
@@ -26,5 +27,6 @@ void CommandBase::init()
 	lifter = new Lifter();
 	flywheel = new FlywheelPID();
 	spindle = new Spindle();
+	ballSensor = new BallSensor();
 	oi = new OI();
 }

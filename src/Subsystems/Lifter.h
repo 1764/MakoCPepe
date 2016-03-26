@@ -1,7 +1,7 @@
 #ifndef Lifter_H
 #define Lifter_H
 
-#define LIFTER_VICTOR
+#define LIFTER_TALON
 
 #include "Commands/Subsystem.h"
 #include "WPILib.h"

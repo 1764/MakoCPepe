@@ -4,7 +4,7 @@
 #include "Commands/PIDSubsystem.h"
 #include "WPILib.h"
 
-#define FLYWHEEL_VICTOR
+#define FLYWHEEL_TALON
 
 class FlywheelPID: public PIDSubsystem
 {

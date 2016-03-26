@@ -9,6 +9,7 @@
 #include "Subsystems/Lifter.h"
 #include "Subsystems/Spindle.h"
 #include "Subsystems/FlywheelPID.h"
+#include "Subsystems/BallSensor.h"
 #include "WPILib.h"
 
 class CommandBase: public Command
@@ -23,6 +24,7 @@ public:
 	static Piston *piston;
 	static Lifter *lifter;
 	static FlywheelPID *flywheel;
+	static BallSensor *ballSensor;
 };
 
 #endif

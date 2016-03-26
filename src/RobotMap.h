@@ -18,4 +18,6 @@ static const int flywheel_encoder_port_two = 1;
 
 static const int spindle_port = 6;
 
+static const int ball_sensor_port = 0;
+
 #endif

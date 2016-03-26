@@ -58,3 +58,9 @@ double OI::GetDistance()
 	return ultrasonic->GetAverageVoltage()/ULTRASONIC_TO_INCHES_COEFFICIENT;
 }
 
+void OI::SetRumble(double amount)
+{
+	copilot->SetRumble(Joystick::RumbleType::kLeftRumble, amount);
+	copilot->SetRumble(Joystick::RumbleType::kRightRumble, amount);
+}
+

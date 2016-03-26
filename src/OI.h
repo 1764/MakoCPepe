@@ -19,6 +19,7 @@ public:
 	bool GetCopilotButton(int);
 	double GetCopilotAxis(int);
 	double GetDistance();
+	void SetRumble(double amount);
 
 	const int LOGITECH_EXTREME3D_AXIS_X = 0;
 	const int LOGITECH_EXTREME3D_AXIS_Y = 1;

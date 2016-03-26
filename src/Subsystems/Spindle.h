@@ -3,6 +3,7 @@
 
 #include "Commands/Subsystem.h"
 #include "WPILib.h"
+#define SPINDLE_TALON
 
 class Spindle: public Subsystem
 {

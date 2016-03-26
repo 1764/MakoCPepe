@@ -1,6 +1,6 @@
 #ifndef DriveTrain_H
 #define DriveTrain_H
-#define CHASSIS_VICTOR
+#define CHASSIS_TALON
 #include "Commands/Subsystem.h"
 #include "WPILib.h"
 

@@ -5,6 +5,7 @@ IntakeWithSpindle::IntakeWithSpindle(double speed)
 	// Use Requires() here to declare subsystem dependencies
 	// eg. Requires(chassis);
 	Requires(spindle);
+	Requires(ballSensor);
 	this->speed = speed;
 }
 
@@ -18,6 +19,14 @@ void IntakeWithSpindle::Initialize()
 void IntakeWithSpindle::Execute()
 {
 	spindle->SetSpeed(speed);
+	if(ballSensor->isActivated())
+	{
+		oi->SetRumble(1.0);
+	}
+	else
+	{
+		oi->SetRumble(0.0);
+	}
 	//spindle->SetSetpoint(speed);
 }
 
