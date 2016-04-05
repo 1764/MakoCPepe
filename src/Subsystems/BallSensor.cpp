@@ -1,5 +1,6 @@
 #include "BallSensor.h"
 #include "../RobotMap.h"
+#include "../Commands/CheckBall.h"
 
 BallSensor::BallSensor() :
 		Subsystem("ExampleSubsystem")
@@ -16,6 +17,7 @@ void BallSensor::InitDefaultCommand()
 {
 	// Set the default command for a subsystem here.
 	//SetDefaultCommand(new MySpecialCommand());
+	SetDefaultCommand(new CheckBall());
 }
 
 // Put methods for controlling this subsystem

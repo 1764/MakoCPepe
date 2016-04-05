@@ -13,6 +13,7 @@ private:
 		CommandBase::init();
 		chooser = new SendableChooser();
 		SmartDashboard::PutData("Auto Modes", chooser);
+
 //		CameraServer::GetInstance()->SetQuality(50);
 //		CameraServer::GetInstance()->StartAutomaticCapture("cam0");
 

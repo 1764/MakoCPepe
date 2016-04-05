@@ -21,6 +21,12 @@ public:
 	double GetDistance();
 	void SetRumble(double amount);
 
+	enum RumblePattern {
+		FAST_PULSE,
+		SLOW_PULSE,
+
+	};
+
 	const int LOGITECH_EXTREME3D_AXIS_X = 0;
 	const int LOGITECH_EXTREME3D_AXIS_Y = 1;
 	const int LOGITECH_EXTREME3D_AXIS_Z = 2;
